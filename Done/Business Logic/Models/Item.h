@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIImage.h>
+#import <Realm.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface Item : NSObject
+@interface Item : RLMObject
+
+@property NSString *name;
+@property NSDate *timeStamp;
+@property BOOL completed;
+@property NSData *imageData;
 
 @end
 

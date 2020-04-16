@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Item.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RealmWrapper : NSObject
+
+- (void)addItem:(Item *)item withCompletionHandler:(void (^)(void))completionHandler;
 
 @end
 

@@ -7,10 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ListTableViewCell : UITableViewCell
+
+- (void)configureWithItem:(Item *)item;
+
++ (NSString *)reuseIdentifier;
 
 @end
 

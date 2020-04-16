@@ -10,6 +10,8 @@
 #import "RealmWrapper.h"
 #import "LanguageProcessor.h"
 #import "ImageDownloader.h"
+#import "Item.h"
+#import <Realm.h>
 
 @interface ListModel()
 
@@ -30,6 +32,17 @@
         self.imageDownloader = [ImageDownloader new];
     }
     return self;
+}
+
+- (void)addNewItemWithName:(NSString *)name withCompletionHandler:(void (^)(void))completionHandler {
+    Item *item;
+    item = [[Item alloc] init];
+    item.name = name;
+    item.timeStamp = [[NSDate alloc] init];
+    
+    [self.realmWrapper addItem:item withCompletionHandler:^{
+        completionHandler();
+    }];
 }
 
 @end

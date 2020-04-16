@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Item.h"
+#import "ListTableViewCell.h"
 
-@interface ListViewController : UIViewController
-
-
+@interface ListViewController : UITableViewController
 
 @end
 

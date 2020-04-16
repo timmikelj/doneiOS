@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ListModel : NSObject
 
+- (void)addNewItemWithName: (NSString *)name withCompletionHandler: (void (^)(void))completionHandler;
+
 @end
 
 NS_ASSUME_NONNULL_END

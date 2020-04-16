@@ -22,12 +22,16 @@
     self = [super init];
     if (self) {
         self.model = [ListModel new];
+        self.items = [[Item allObjects] sortedResultsUsingKeyPath:@"timeStamp" ascending:NO];
     }
     return self;
 }
 
-- (void)addNewItem:(NSString *)item withCompletionHandler:(void (^)(void))completionHandler {
-    
+- (void)addNewItemWithName:(NSString *)name withCompletionHandler:(void (^)(void))completionHandler
+{
+    [self.model addNewItemWithName:name withCompletionHandler:^{
+        completionHandler();
+    }];
 }
 
 @end

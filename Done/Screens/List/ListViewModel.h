@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Item.h"
+#import <Realm.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ListViewModel : NSObject
 
-- (void)addNewItem:(NSString *)item withCompletionHandler:(void (^)(void))completionHandler;
+@property RLMResults<Item *> *items;
+
+- (void)addNewItemWithName:(NSString *)name withCompletionHandler:(void (^)(void))completionHandler;
 
 @end
 

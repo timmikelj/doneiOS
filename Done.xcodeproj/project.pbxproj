@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -104,7 +104,6 @@
 				F423F07D74E8647E56AE54E6 /* Pods-DoneTests.debug.xcconfig */,
 				3EEAA687C04ED737926E52E0 /* Pods-DoneTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -115,6 +114,7 @@
 				82B4B5C824479DC90056BD3B /* Language Processing */,
 				820E3E4A2446FBA700E7279D /* Models */,
 				820E3E492446FB9D00E7279D /* Networking */,
+				821E648A24489A0000B6AA90 /* Extensions */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -166,6 +166,13 @@
 				82D517F22447917300F450D7 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		821E648A24489A0000B6AA90 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		824F76442446F1EB009DA299 = {
@@ -597,7 +604,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43HPDBHL29;
 				INFOPLIST_FILE = "Done/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,7 +623,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 43HPDBHL29;
 				INFOPLIST_FILE = "Done/Supporting Files/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
