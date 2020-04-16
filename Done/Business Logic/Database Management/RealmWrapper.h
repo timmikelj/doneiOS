@@ -1,8 +1,8 @@
 //
-//  ListPresenter.h
+//  RealmWrapper.h
 //  Done
 //
-//  Created by Chloe Mikelj on 15/04/2020.
+//  Created by Tim Mikelj on 15/04/2020.
 //  Copyright © 2020 Tim Mikelj. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ListPresenter : NSObject
+@interface RealmWrapper : NSObject
 
 @end
 

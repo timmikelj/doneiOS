@@ -1,16 +1,13 @@
 //
-//  ViewController.h
+//  ImageDownloader.m
 //  Done
 //
 //  Created by Tim Mikelj on 15/04/2020.
 //  Copyright © 2020 Tim Mikelj. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ImageDownloader.h"
 
-@interface ListViewController : UIViewController
-
-
+@implementation ImageDownloader
 
 @end
-

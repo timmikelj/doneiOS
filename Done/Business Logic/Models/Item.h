@@ -1,16 +1,17 @@
 //
-//  ViewController.h
+//  Item.h
 //  Done
 //
 //  Created by Tim Mikelj on 15/04/2020.
 //  Copyright © 2020 Tim Mikelj. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
-@interface ListViewController : UIViewController
+NS_ASSUME_NONNULL_BEGIN
 
-
+@interface Item : NSObject
 
 @end
 
+NS_ASSUME_NONNULL_END

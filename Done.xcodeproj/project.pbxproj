@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		820E3E4F24478FBB00E7279D /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 820E3E4E24478FBB00E7279D /* ListModel.m */; };
-		820E3E5224478FCB00E7279D /* ListPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 820E3E5124478FCB00E7279D /* ListPresenter.m */; };
 		824F76522446F1EC009DA299 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F76512446F1EC009DA299 /* AppDelegate.m */; };
 		824F76552446F1EC009DA299 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F76542446F1EC009DA299 /* SceneDelegate.m */; };
 		824F76582446F1EC009DA299 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F76572446F1EC009DA299 /* ListViewController.m */; };
@@ -19,6 +18,11 @@
 		824F766D2446F1ED009DA299 /* DoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F766C2446F1ED009DA299 /* DoneTests.m */; };
 		824F767D2446F252009DA299 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F767B2446F252009DA299 /* ListTableViewCell.m */; };
 		824F767E2446F252009DA299 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824F767C2446F252009DA299 /* ListTableViewCell.xib */; };
+		82B4B5C424479A550056BD3B /* ListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5C324479A550056BD3B /* ListViewModel.m */; };
+		82B4B5C724479DBA0056BD3B /* RealmWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5C624479DBA0056BD3B /* RealmWrapper.m */; };
+		82B4B5CB24479DF30056BD3B /* LanguageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5CA24479DF30056BD3B /* LanguageProcessor.m */; };
+		82B4B5CF24479E8C0056BD3B /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5CE24479E8C0056BD3B /* Item.m */; };
+		82B4B5D224479EB20056BD3B /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5D124479EB20056BD3B /* ImageDownloader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +38,7 @@
 /* Begin PBXFileReference section */
 		820E3E4D24478FBB00E7279D /* ListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
 		820E3E4E24478FBB00E7279D /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
-		820E3E5024478FCB00E7279D /* ListPresenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListPresenter.h; sourceTree = "<group>"; };
-		820E3E5124478FCB00E7279D /* ListPresenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListPresenter.m; sourceTree = "<group>"; };
+		820E3E5024478FCB00E7279D /* ListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewModel.h; sourceTree = "<group>"; };
 		824F764D2446F1EB009DA299 /* Done..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Done..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824F76502446F1EB009DA299 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		824F76512446F1EC009DA299 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +56,15 @@
 		824F767A2446F252009DA299 /* ListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
 		824F767B2446F252009DA299 /* ListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListTableViewCell.m; sourceTree = "<group>"; };
 		824F767C2446F252009DA299 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		82B4B5C324479A550056BD3B /* ListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewModel.m; sourceTree = "<group>"; };
+		82B4B5C524479DBA0056BD3B /* RealmWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmWrapper.h; sourceTree = "<group>"; };
+		82B4B5C624479DBA0056BD3B /* RealmWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmWrapper.m; sourceTree = "<group>"; };
+		82B4B5C924479DF30056BD3B /* LanguageProcessor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LanguageProcessor.h; sourceTree = "<group>"; };
+		82B4B5CA24479DF30056BD3B /* LanguageProcessor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageProcessor.m; sourceTree = "<group>"; };
+		82B4B5CD24479E8C0056BD3B /* Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		82B4B5CE24479E8C0056BD3B /* Item.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		82B4B5D024479EB20056BD3B /* ImageDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageDownloader.h; sourceTree = "<group>"; };
+		82B4B5D124479EB20056BD3B /* ImageDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
 		82D517F22447917300F450D7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,9 +89,10 @@
 		820E3E472446FB5400E7279D /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
+				820E3E482446FB9300E7279D /* Database Management */,
+				82B4B5C824479DC90056BD3B /* Language Processing */,
 				820E3E4A2446FBA700E7279D /* Models */,
 				820E3E492446FB9D00E7279D /* Networking */,
-				820E3E482446FB9300E7279D /* Database Management */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -87,6 +100,8 @@
 		820E3E482446FB9300E7279D /* Database Management */ = {
 			isa = PBXGroup;
 			children = (
+				82B4B5C524479DBA0056BD3B /* RealmWrapper.h */,
+				82B4B5C624479DBA0056BD3B /* RealmWrapper.m */,
 			);
 			path = "Database Management";
 			sourceTree = "<group>";
@@ -94,6 +109,8 @@
 		820E3E492446FB9D00E7279D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				82B4B5D024479EB20056BD3B /* ImageDownloader.h */,
+				82B4B5D124479EB20056BD3B /* ImageDownloader.m */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -101,6 +118,8 @@
 		820E3E4A2446FBA700E7279D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				82B4B5CD24479E8C0056BD3B /* Item.h */,
+				82B4B5CE24479E8C0056BD3B /* Item.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,10 +198,10 @@
 				824F76792446F21D009DA299 /* Cells */,
 				824F76562446F1EC009DA299 /* ListViewController.h */,
 				824F76572446F1EC009DA299 /* ListViewController.m */,
+				820E3E5024478FCB00E7279D /* ListViewModel.h */,
+				82B4B5C324479A550056BD3B /* ListViewModel.m */,
 				820E3E4D24478FBB00E7279D /* ListModel.h */,
 				820E3E4E24478FBB00E7279D /* ListModel.m */,
-				820E3E5024478FCB00E7279D /* ListPresenter.h */,
-				820E3E5124478FCB00E7279D /* ListPresenter.m */,
 				824F76592446F1EC009DA299 /* List.storyboard */,
 			);
 			path = List;
@@ -196,6 +215,15 @@
 				824F767C2446F252009DA299 /* ListTableViewCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		82B4B5C824479DC90056BD3B /* Language Processing */ = {
+			isa = PBXGroup;
+			children = (
+				82B4B5C924479DF30056BD3B /* LanguageProcessor.h */,
+				82B4B5CA24479DF30056BD3B /* LanguageProcessor.m */,
+			);
+			path = "Language Processing";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,13 +327,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82B4B5CF24479E8C0056BD3B /* Item.m in Sources */,
+				82B4B5D224479EB20056BD3B /* ImageDownloader.m in Sources */,
 				824F76582446F1EC009DA299 /* ListViewController.m in Sources */,
 				824F76522446F1EC009DA299 /* AppDelegate.m in Sources */,
 				824F76632446F1ED009DA299 /* main.m in Sources */,
+				82B4B5C724479DBA0056BD3B /* RealmWrapper.m in Sources */,
+				82B4B5C424479A550056BD3B /* ListViewModel.m in Sources */,
+				82B4B5CB24479DF30056BD3B /* LanguageProcessor.m in Sources */,
 				820E3E4F24478FBB00E7279D /* ListModel.m in Sources */,
 				824F76552446F1EC009DA299 /* SceneDelegate.m in Sources */,
 				824F767D2446F252009DA299 /* ListTableViewCell.m in Sources */,
-				820E3E5224478FCB00E7279D /* ListPresenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

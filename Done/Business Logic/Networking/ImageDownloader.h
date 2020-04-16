@@ -1,5 +1,5 @@
 //
-//  ListModel.h
+//  ImageDownloader.h
 //  Done
 //
 //  Created by Tim Mikelj on 15/04/2020.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ListModel : NSObject
+@interface ImageDownloader : NSObject
 
 @end
 

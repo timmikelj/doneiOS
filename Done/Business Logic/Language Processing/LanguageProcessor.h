@@ -1,5 +1,5 @@
 //
-//  ListModel.h
+//  LanguageProcessor.h
 //  Done
 //
 //  Created by Tim Mikelj on 15/04/2020.
@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <NaturalLanguage/NaturalLanguage.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ListModel : NSObject
+@interface LanguageProcessor : NSObject
 
 @end
 
