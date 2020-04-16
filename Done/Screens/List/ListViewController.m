@@ -8,6 +8,7 @@
 
 #import "ListViewController.h"
 #import "ListViewModel.h"
+#import "AlertHelper.h"
 
 @interface ListViewController ()
 
@@ -50,13 +51,20 @@
 
 // create alert with text field to add a new item
 - (IBAction)addTapped:(UIBarButtonItem *)sender {
-     __weak typeof(self) weakSelf = self;
-    [self.viewModel addNewItemWithName:@"BOOM" withCompletionHandler:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [weakSelf.tableView insertRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil]
-                              withRowAnimation:UITableViewRowAnimationAutomatic];
-        });
+    
+    UIAlertController *alert = [[AlertHelper alloc] createAlertAddNewItemWithTitle:@"Add a new item"
+                                                                  withAddNewItemBlock:^(NSString * _Nonnull itemName) {
+            
+         __weak typeof(self) weakSelf = self;
+        [self.viewModel addNewItemWithName:itemName withCompletionHandler:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.tableView insertRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil]
+                                  withRowAnimation:UITableViewRowAnimationAutomatic];
+            });
+        }];
     }];
+
+    [self presentViewController:alert animated:true completion:nil];
 }
 
 @end

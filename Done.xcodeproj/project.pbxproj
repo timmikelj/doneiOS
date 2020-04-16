@@ -19,6 +19,7 @@
 		824F766D2446F1ED009DA299 /* DoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F766C2446F1ED009DA299 /* DoneTests.m */; };
 		824F767D2446F252009DA299 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F767B2446F252009DA299 /* ListTableViewCell.m */; };
 		824F767E2446F252009DA299 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824F767C2446F252009DA299 /* ListTableViewCell.xib */; };
+		82958B032448CFFB003D151B /* AlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 82958B022448CFFB003D151B /* AlertHelper.m */; };
 		82B4B5C424479A550056BD3B /* ListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5C324479A550056BD3B /* ListViewModel.m */; };
 		82B4B5C724479DBA0056BD3B /* RealmWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5C624479DBA0056BD3B /* RealmWrapper.m */; };
 		82B4B5CB24479DF30056BD3B /* LanguageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5CA24479DF30056BD3B /* LanguageProcessor.m */; };
@@ -60,6 +61,8 @@
 		824F767A2446F252009DA299 /* ListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
 		824F767B2446F252009DA299 /* ListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListTableViewCell.m; sourceTree = "<group>"; };
 		824F767C2446F252009DA299 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		82958B012448CFFB003D151B /* AlertHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertHelper.h; sourceTree = "<group>"; };
+		82958B022448CFFB003D151B /* AlertHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertHelper.m; sourceTree = "<group>"; };
 		82B4B5C324479A550056BD3B /* ListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewModel.m; sourceTree = "<group>"; };
 		82B4B5C524479DBA0056BD3B /* RealmWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmWrapper.h; sourceTree = "<group>"; };
 		82B4B5C624479DBA0056BD3B /* RealmWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmWrapper.m; sourceTree = "<group>"; };
@@ -226,7 +229,7 @@
 		824F76782446F203009DA299 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				824F76792446F21D009DA299 /* Cells */,
+				82958AFF2448CFB1003D151B /* Custom Views */,
 				824F76562446F1EC009DA299 /* ListViewController.h */,
 				824F76572446F1EC009DA299 /* ListViewController.m */,
 				820E3E5024478FCB00E7279D /* ListViewModel.h */,
@@ -238,14 +241,32 @@
 			path = List;
 			sourceTree = "<group>";
 		};
-		824F76792446F21D009DA299 /* Cells */ = {
+		824F76792446F21D009DA299 /* Table View Cell */ = {
 			isa = PBXGroup;
 			children = (
 				824F767A2446F252009DA299 /* ListTableViewCell.h */,
 				824F767B2446F252009DA299 /* ListTableViewCell.m */,
 				824F767C2446F252009DA299 /* ListTableViewCell.xib */,
 			);
-			path = Cells;
+			path = "Table View Cell";
+			sourceTree = "<group>";
+		};
+		82958AFF2448CFB1003D151B /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				82958B002448CFCD003D151B /* Custom Alerts */,
+				824F76792446F21D009DA299 /* Table View Cell */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		82958B002448CFCD003D151B /* Custom Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				82958B012448CFFB003D151B /* AlertHelper.h */,
+				82958B022448CFFB003D151B /* AlertHelper.m */,
+			);
+			path = "Custom Alerts";
 			sourceTree = "<group>";
 		};
 		82B4B5C824479DC90056BD3B /* Language Processing */ = {
@@ -438,6 +459,7 @@
 				82B4B5D224479EB20056BD3B /* ImageDownloader.m in Sources */,
 				824F76582446F1EC009DA299 /* ListViewController.m in Sources */,
 				824F76522446F1EC009DA299 /* AppDelegate.m in Sources */,
+				82958B032448CFFB003D151B /* AlertHelper.m in Sources */,
 				824F76632446F1ED009DA299 /* main.m in Sources */,
 				82B4B5C724479DBA0056BD3B /* RealmWrapper.m in Sources */,
 				82B4B5C424479A550056BD3B /* ListViewModel.m in Sources */,
