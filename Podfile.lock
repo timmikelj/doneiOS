@@ -1,0 +1,19 @@
+PODS:
+  - Realm (4.4.0):
+    - Realm/Headers (= 4.4.0)
+  - Realm/Headers (4.4.0)
+
+DEPENDENCIES:
+  - Realm
+  - Realm/Headers
+
+SPEC REPOS:
+  trunk:
+    - Realm
+
+SPEC CHECKSUMS:
+  Realm: e125f464884cda953ebefe70c671b75b03b81b9b
+
+PODFILE CHECKSUM: 0cb2572cfbedf4849b87a487af616b9c08291700
+
+COCOAPODS: 1.9.0
