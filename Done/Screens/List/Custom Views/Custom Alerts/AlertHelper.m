@@ -16,7 +16,7 @@
 
 @implementation AlertHelper
 
-- (UIAlertController *)createAlertAddNewItemWithTitle:(NSString *)title withAddNewItemBlock:(void (^)(NSString *itemName))addNewItem {
+- (UIAlertController *)createAlertAddNewItemWithTitle:(NSString *)title addedNewItemBlock:(void (^)(NSString *itemName))addNewItem {
     self.alert = [UIAlertController alertControllerWithTitle:title
                                                      message:@""
                                               preferredStyle:UIAlertControllerStyleAlert];

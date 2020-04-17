@@ -40,8 +40,20 @@
     item.name = name;
     item.timeStamp = [[NSDate alloc] init];
     
+    __weak typeof(self) weakSelf = self;
     [self.realmWrapper addItem:item withCompletionHandler:^{
         completionHandler();
+        
+        [weakSelf.languageProcessor findNounsAndVerbsInAString:item.name
+                                           withCompletionBlock:^(NSArray * _Nonnull nouns, NSArray * _Nonnull verbs) {
+            
+            if (verbs.count > 0) {
+                // find an image matching first verb
+            } else if (nouns.count > 0) {
+               // find an image matching first noun
+            }
+            
+        }];
     }];
 }
 

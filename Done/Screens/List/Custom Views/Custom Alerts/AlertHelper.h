@@ -13,7 +13,7 @@
 
 - (instancetype)init __attribute__ ((unavailable("init unavailable. Please use initAddNewItemWithTitle or initEditItemName")));
 
-- (UIAlertController *)createAlertAddNewItemWithTitle:(NSString *)title withAddNewItemBlock:(void (^)(NSString *itemName))addNewItem;
+- (UIAlertController *)createAlertAddNewItemWithTitle:(NSString *)title addedNewItemBlock:(void (^)(NSString *itemName))addNewItem;
 - (UIAlertController *)createAlertEditItemName:(Item *)item withEditItemBlock:(void (^)(NSString *newItemName))editItem;
 
 @end

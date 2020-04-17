@@ -25,6 +25,7 @@
 
 - (void)setup {
     self.viewModel = [ListViewModel new];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[UINib nibWithNibName:@"ListTableViewCell" bundle:nil]
          forCellReuseIdentifier:[ListTableViewCell reuseIdentifier]];
 }
@@ -48,12 +49,10 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:true];
 }
 
-
-// create alert with text field to add a new item
 - (IBAction)addTapped:(UIBarButtonItem *)sender {
     
     UIAlertController *alert = [[AlertHelper alloc] createAlertAddNewItemWithTitle:@"Add a new item"
-                                                                  withAddNewItemBlock:^(NSString * _Nonnull itemName) {
+                                                                  addedNewItemBlock:^(NSString * _Nonnull itemName) {
             
          __weak typeof(self) weakSelf = self;
         [self.viewModel addNewItemWithName:itemName withCompletionHandler:^{
