@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "Item.h"
 #import "ListTableViewCell.h"
+#import "ListViewControllerDelegate.h"
 
-@interface ListViewController : UITableViewController
+@interface ListViewController : UITableViewController <ListViewControllerDelegate>
 
 @end
 

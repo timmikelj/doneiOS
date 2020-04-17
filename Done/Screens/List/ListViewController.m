@@ -25,6 +25,7 @@
 
 - (void)setup {
     self.viewModel = [ListViewModel new];
+    self.viewModel.viewControllerDelegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     [self.tableView registerNib:[UINib nibWithNibName:@"ListTableViewCell" bundle:nil]
          forCellReuseIdentifier:[ListTableViewCell reuseIdentifier]];
@@ -64,6 +65,15 @@
     }];
 
     [self presentViewController:alert animated:true completion:nil];
+}
+
+#pragma mark - ListViewDelegate methods
+
+- (void)reloadTableViewCellAtIndex:(NSUInteger)index {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:index inSection:0], nil]
+                              withRowAnimation:UITableViewRowAnimationAutomatic];
+    });
 }
 
 @end

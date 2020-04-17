@@ -57,21 +57,19 @@
             
             NSString *searchString = [[NSString alloc] init];
             
-            // Prefer verb search string over noun for now
-            if (verbs.count > 0) {
-                searchString = verbs.firstObject;
-            } else if (nouns.count > 0) {
+            // Prefer noun search string over verb for now
+            if (nouns.count > 0) {
                 searchString = nouns.firstObject;
+            } else if (verbs.count > 0) {
+                searchString = verbs.firstObject;
             }
             
-            if (searchString.length > 0) {
+                if (searchString.length > 0) {
                 
-                [self.imageDownloader loadFirstImageMatchingString:verbs.firstObject
+                [self.imageDownloader loadFirstImageMatchingString:searchString
                                              withCompletionHandler:^(UIImage * _Nullable image) {
 
-                    dispatch_async(dispatch_queue_create("background", 0), ^{
-                        @autoreleasepool {
-                            
+      
                             RLMRealm *realm = [RLMRealm defaultRealm];
                             Item *item = [realm resolveThreadSafeReference:itemReference];
                             if (!item) {
@@ -80,8 +78,10 @@
                             [realm beginWriteTransaction];
                             item.imageData = UIImagePNGRepresentation(image);
                             [realm commitWriteTransaction];
-                        }
-                    });
+                            
+                            // Create a new reference to pass through
+//                            RLMThreadSafeReference *itemReference = [RLMThreadSafeReference referenceWithThreadConfined:item];
+                            [self.viewModelDelegate reloadItemWithName:item.name];
                 }
                                                   withErrorHandler:^(NSString * _Nonnull errorMessage) {
                     // Decide how to handle the error in the future

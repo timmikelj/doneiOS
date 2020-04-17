@@ -36,9 +36,13 @@
     [self.checkBoxButton setTintColor:[UIColor labelColor]];
     
     UIImage *itemImage = [UIImage imageWithData:item.imageData];
-    itemImage != nil
-    ? [self.itemImageView setImage:itemImage]
-    : [self.itemImageView setHidden:true];
+    if (itemImage != nil) {
+        [self.itemImageView setImage:itemImage];
+        self.itemImageView.layer.cornerRadius = self.itemImageView.frame.size.height/2;
+        [self.itemImageView setHidden:false];
+    } else {
+        [self.itemImageView setHidden:true];
+    }
 }
 
 - (UIImage *)getImageForItemCompletedStatus:(BOOL)completed {

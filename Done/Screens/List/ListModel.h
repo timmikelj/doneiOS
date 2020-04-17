@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ListViewModel.h"
+#import "ListViewModelDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ListModel : NSObject
+
+@property (weak, nonatomic) id<ListViewModelDelegate> viewModelDelegate;
 
 - (void)addNewItemWithName: (NSString *)name withCompletionHandler: (void (^)(void))completionHandler;
 

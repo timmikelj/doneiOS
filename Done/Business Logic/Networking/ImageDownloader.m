@@ -32,7 +32,9 @@
         [urlString appendString:[self encodedSearchStringWith:string]];
         [urlString appendString:@"&min_width=80"];
         [urlString appendString:@"&min_height=80"];
-        [urlString appendString:@"&per_page=3"];
+        [urlString appendString:@"&order=popular"];
+        [urlString appendString:@"&lang=en"];
+        [urlString appendString:@"&per_page=10"];
         
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
@@ -59,7 +61,11 @@
             
             NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
             NSArray *arrayOfImages = [json objectForKey:@"hits"];
-            NSString *imageUrl = [[arrayOfImages firstObject] objectForKey:@"webformatURL"];
+            if (arrayOfImages.count == 0) {
+                return;
+            }
+            uint32_t randomIndex = arc4random_uniform((int)[arrayOfImages count]);
+            NSString *imageUrl = [[arrayOfImages objectAtIndex:randomIndex] objectForKey:@"webformatURL"];
             
             [self loadImageWithUrlString:imageUrl
                      retrievedImageBlock:^(UIImage *image) {

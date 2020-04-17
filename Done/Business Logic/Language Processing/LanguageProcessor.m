@@ -45,7 +45,7 @@
                 [verbs addObject:[string substringWithRange:tokenRange]];
             }
             
-            if ([tag isEqual: @"Noun"]) {
+            if ([tag isEqual: @"Noun"] || [tag isEqual: @"Pronoun"]) {
                 [nouns addObject:[string substringWithRange:tokenRange]];
             }
         }];
