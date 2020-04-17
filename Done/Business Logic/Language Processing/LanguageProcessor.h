@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// Evalues a string and returns an array of NSString verbs and array of NSString nouns
 - (void)findNounsAndVerbsInAString:(NSString *)string
-               withCompletionBlock:(void (^)(NSArray *nouns, NSArray *verbs))completionBlock;
+             withCompletionHandler:(nonnull void (^)(NSArray * _Nullable, NSArray * _Nullable))completionHandler;
 
 @end
 

@@ -26,9 +26,9 @@
 }
 
 - (void)findNounsAndVerbsInAString:(NSString *)string
-               withCompletionBlock:(nonnull void (^)(NSArray * _Nonnull, NSArray * _Nonnull))completionBlock {
+               withCompletionHandler:(nonnull void (^)(NSArray * _Nullable, NSArray * _Nullable))completionHandler {
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         
         self.tagger.string = string;
         
@@ -50,8 +50,8 @@
             }
         }];
         
-        completionBlock([NSArray arrayWithArray:nouns],
-                        [NSArray arrayWithArray:verbs]);
+        completionHandler([NSArray arrayWithArray:nouns],
+                          [NSArray arrayWithArray:verbs]);
         
     });
 }

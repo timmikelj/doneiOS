@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIImage.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ImageDownloader : NSObject
+
+/// Using Pixabay API finds finds and downloads first image matching given string
+- (void)loadFirstImageMatchingString:(NSString *)string
+               withCompletionHandler:(void (^)(UIImage * _Nullable image))completionHandler
+                    withErrorHandler: (void (^)(NSString *errorMessage))errorHandler;
 
 @end
 

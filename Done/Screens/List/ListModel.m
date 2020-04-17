@@ -35,26 +35,63 @@
 }
 
 - (void)addNewItemWithName:(NSString *)name withCompletionHandler:(void (^)(void))completionHandler {
+    
     Item *item;
     item = [[Item alloc] init];
     item.name = name;
     item.timeStamp = [[NSDate alloc] init];
     
-    __weak typeof(self) weakSelf = self;
     [self.realmWrapper addItem:item withCompletionHandler:^{
         completionHandler();
+    }];
+    
+    [self processAddedItem:item];
+}
+
+- (void)processAddedItem:(Item *)item {
+    
+        RLMThreadSafeReference *itemReference = [RLMThreadSafeReference referenceWithThreadConfined:item];
         
-        [weakSelf.languageProcessor findNounsAndVerbsInAString:item.name
-                                           withCompletionBlock:^(NSArray * _Nonnull nouns, NSArray * _Nonnull verbs) {
+        [self.languageProcessor findNounsAndVerbsInAString:item.name
+                                     withCompletionHandler:^(NSArray * _Nonnull nouns, NSArray * _Nonnull verbs) {
             
+            NSString *searchString = [[NSString alloc] init];
+            
+            // Prefer verb search string over noun for now
             if (verbs.count > 0) {
-                // find an image matching first verb
+                searchString = verbs.firstObject;
             } else if (nouns.count > 0) {
-               // find an image matching first noun
+                searchString = nouns.firstObject;
             }
             
+            if (searchString.length > 0) {
+                
+                [self.imageDownloader loadFirstImageMatchingString:verbs.firstObject
+                                             withCompletionHandler:^(UIImage * _Nullable image) {
+
+                    dispatch_async(dispatch_queue_create("background", 0), ^{
+                        @autoreleasepool {
+                            
+                            RLMRealm *realm = [RLMRealm defaultRealm];
+                            Item *item = [realm resolveThreadSafeReference:itemReference];
+                            if (!item) {
+                                return;
+                            }
+                            [realm beginWriteTransaction];
+                            item.imageData = UIImagePNGRepresentation(image);
+                            [realm commitWriteTransaction];
+                        }
+                    });
+                }
+                                                  withErrorHandler:^(NSString * _Nonnull errorMessage) {
+                    // Decide how to handle the error in the future
+                    // Option 1) if manage to retrieve imageUrl could save that to realm and try fetching it when when item is loaded in table view cell
+                    // Option 2) could render/load a default image and save that to realm
+                    // Option 3) could try to repeat the same query and request to fetch an image
+                    NSLog(@"%@", errorMessage);
+                }];
+            }
         }];
-    }];
 }
 
 @end
