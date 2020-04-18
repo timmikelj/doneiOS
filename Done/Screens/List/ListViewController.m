@@ -34,7 +34,13 @@
 
 #pragma mark - Table View
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.viewModel.items.count;
+    if (self.viewModel.items.count > 0) {
+        self.tableView.backgroundView = nil;
+        return self.viewModel.items.count;
+    } else {
+        [self showEmptyTableMessage];
+        return 0;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,6 +87,11 @@
     }];
     
     [self presentViewController:alert animated:true completion:nil];
+}
+
+#pragma mark - Private methods
+- (void)showEmptyTableMessage {
+    self.tableView.backgroundView = [self.viewModel emptyListLabelForView:self.view];
 }
 
 #pragma mark - ListViewDelegate methods

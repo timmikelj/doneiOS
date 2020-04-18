@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Realm.h>
 #import "Item.h"
 #import "ListViewModelDelegate.h"
 #import "ListViewControllerDelegate.h"
-#import <Realm.h>
+#import <UIKit/UILabel.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -22,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addNewItemWithName:(NSString *)name withCompletionHandler:(void (^)(void))completionHandler;
 - (void)removeItemAtIndex:(NSUInteger)index;
+- (UILabel *)emptyListLabelForView:(UIView *)view;
 
 @end
 

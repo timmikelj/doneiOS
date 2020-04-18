@@ -43,10 +43,24 @@
     [self.model removeItem:itemToDelete];
 }
 
+- (UILabel *)emptyListLabelForView:(UIView *)view {
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,
+                                                               0,
+                                                               view.bounds.size.width - 32,
+                                                               view.bounds.size.height)];
+    label.text = @"Get things done. 💪\n\nAdd a new item by tapping +";
+    label.textColor = [UIColor labelColor];
+    label.numberOfLines = 0;
+    label.textAlignment = NSTextAlignmentCenter;
+    label.font = [UIFont preferredFontForTextStyle:@"UIFontTextStyleTitle1"];
+    [label sizeToFit];
+    
+    return label;
+}
+
 #pragma mark ListViewModelDelegate Methods
 
-- (void)reloadItemWithName:(NSString *)itemName
-{
+- (void)reloadItemWithName:(NSString *)itemName {
     RLMResults<Item *> *items = [self getItemsByDateDescending];
     NSUInteger index = [items indexOfObjectWhere:@"name == %@", itemName];
     [self.viewControllerDelegate reloadTableViewCellAtIndex:index];
