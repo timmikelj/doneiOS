@@ -16,8 +16,7 @@
 
 @implementation RealmWrapper
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.realm = [RLMRealm defaultRealm];
@@ -30,6 +29,15 @@
         [self.realm addObject:item];
         completionHandler();
     }];
+}
+
+- (void)removeItem:(Item *)item {
+    if (!item) {
+        return;
+    }
+    [self.realm beginWriteTransaction];
+    [self.realm deleteObject:item];
+    [self.realm commitWriteTransaction];
 }
 
 @end

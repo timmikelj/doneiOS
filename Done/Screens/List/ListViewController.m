@@ -27,6 +27,7 @@
     self.viewModel = [ListViewModel new];
     self.viewModel.viewControllerDelegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.tableFooterView = [[UIView alloc] init];
     [self.tableView registerNib:[UINib nibWithNibName:@"ListTableViewCell" bundle:nil]
          forCellReuseIdentifier:[ListTableViewCell reuseIdentifier]];
 }
@@ -50,20 +51,35 @@
     [self.tableView deselectRowAtIndexPath:indexPath animated:true];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.viewModel removeItemAtIndex:indexPath.row];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                                  withRowAnimation:UITableViewRowAnimationLeft];
+        });
+    }
+}
+
+#pragma mark - Actions
 - (IBAction)addTapped:(UIBarButtonItem *)sender {
     
     UIAlertController *alert = [[AlertHelper alloc] createAlertAddNewItemWithTitle:@"Add a new item"
-                                                                  addedNewItemBlock:^(NSString * _Nonnull itemName) {
-            
-         __weak typeof(self) weakSelf = self;
+                                                                 addedNewItemBlock:^(NSString * _Nonnull itemName) {
+        
+        __weak typeof(self) weakSelf = self;
         [self.viewModel addNewItemWithName:itemName withCompletionHandler:^{
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.tableView insertRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil]
-                                  withRowAnimation:UITableViewRowAnimationAutomatic];
+                                          withRowAnimation:UITableViewRowAnimationAutomatic];
             });
         }];
     }];
-
+    
     [self presentViewController:alert animated:true completion:nil];
 }
 

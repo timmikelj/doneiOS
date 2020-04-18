@@ -48,6 +48,11 @@
     [self processAddedItem:item];
 }
 
+- (void)removeItem:(Item *)item {
+    [self.realmWrapper removeItem:item];
+}
+
+#pragma mark Private methods
 - (void)processAddedItem:(Item *)item {
     
         RLMThreadSafeReference *itemReference = [RLMThreadSafeReference referenceWithThreadConfined:item];
@@ -69,7 +74,6 @@
                 [self.imageDownloader loadFirstImageMatchingString:searchString
                                              withCompletionHandler:^(UIImage * _Nullable image) {
 
-      
                             RLMRealm *realm = [RLMRealm defaultRealm];
                             Item *item = [realm resolveThreadSafeReference:itemReference];
                             if (!item) {
@@ -79,8 +83,6 @@
                             item.imageData = UIImagePNGRepresentation(image);
                             [realm commitWriteTransaction];
                             
-                            // Create a new reference to pass through
-//                            RLMThreadSafeReference *itemReference = [RLMThreadSafeReference referenceWithThreadConfined:item];
                             [self.viewModelDelegate reloadItemWithName:item.name];
                 }
                                                   withErrorHandler:^(NSString * _Nonnull errorMessage) {

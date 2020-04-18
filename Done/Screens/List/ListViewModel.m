@@ -28,36 +28,28 @@
     return self;
 }
 
-- (RLMResults<Item *> *)getItemsByDateDescending
-{
+- (RLMResults<Item *> *)getItemsByDateDescending {
     return [[Item allObjects] sortedResultsUsingKeyPath:@"timeStamp" ascending:NO];
 }
 
-- (void)addNewItemWithName:(NSString *)name withCompletionHandler:(void (^)(void))completionHandler
-{
+- (void)addNewItemWithName:(NSString *)name withCompletionHandler:(void (^)(void))completionHandler {
     [self.model addNewItemWithName:name withCompletionHandler:^{
         completionHandler();
     }];
 }
 
-- (void)reloadItemWithReference:(RLMThreadSafeReference *)itemReference
-{    
-//    RLMRealm *realm = [RLMRealm defaultRealm];
-//    Item *item = [realm resolveThreadSafeReference:itemReference];
-//    NSUInteger index = [self.items indexOfObject:item];
-//    [self.viewControllerDelegate reloadTableViewCellAtIndex:index];
+- (void)removeItemAtIndex:(NSUInteger)index {
+    Item *itemToDelete = [self.items objectAtIndex:index];
+    [self.model removeItem:itemToDelete];
 }
+
+#pragma mark ListViewModelDelegate Methods
 
 - (void)reloadItemWithName:(NSString *)itemName
 {
     RLMResults<Item *> *items = [self getItemsByDateDescending];
     NSUInteger index = [items indexOfObjectWhere:@"name == %@", itemName];
     [self.viewControllerDelegate reloadTableViewCellAtIndex:index];
-}
-
-- (void)reloadItem:(Item *)item {
-    
-
 }
 
 @end

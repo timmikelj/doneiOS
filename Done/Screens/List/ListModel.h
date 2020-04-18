@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) id<ListViewModelDelegate> viewModelDelegate;
 
 - (void)addNewItemWithName: (NSString *)name withCompletionHandler: (void (^)(void))completionHandler;
+- (void)removeItem:(Item *)item;
 
 @end
 

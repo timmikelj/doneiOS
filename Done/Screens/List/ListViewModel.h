@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) id<ListViewControllerDelegate> viewControllerDelegate;
 
 - (void)addNewItemWithName:(NSString *)name withCompletionHandler:(void (^)(void))completionHandler;
+- (void)removeItemAtIndex:(NSUInteger)index;
 
 @end
 
