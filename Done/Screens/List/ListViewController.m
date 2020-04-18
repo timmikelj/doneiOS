@@ -9,10 +9,12 @@
 #import "ListViewController.h"
 #import "ListViewModel.h"
 #import "AlertHelper.h"
+#import "HapticFeedback.h"
 
 @interface ListViewController ()
 
 @property (strong, nonatomic, nonnull) ListViewModel *viewModel;
+@property (strong, nonatomic) HapticFeedback *hapticFeedback;
 
 @end
 
@@ -24,10 +26,11 @@
 }
 
 - (void)setup {
+    self.hapticFeedback = [HapticFeedback new];
     self.viewModel = [ListViewModel new];
     self.viewModel.viewControllerDelegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.tableFooterView = [[UIView alloc] init];
+    self.tableView.tableFooterView = [UIView new];
     [self.tableView registerNib:[UINib nibWithNibName:@"ListTableViewCell" bundle:nil]
          forCellReuseIdentifier:[ListTableViewCell reuseIdentifier]];
 }
@@ -54,6 +57,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.hapticFeedback tapped];
     [self.viewModel toggleItemCompletionAtIndex:indexPath.row
                           withCompletionHandler:^{
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -70,6 +74,7 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.hapticFeedback tapped];
         [self.viewModel removeItemAtIndex:indexPath.row];
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
@@ -80,7 +85,7 @@
 
 #pragma mark - Actions
 - (IBAction)addTapped:(UIBarButtonItem *)sender {
-    
+    [self.hapticFeedback tapped];
     UIAlertController *alert = [[AlertHelper alloc] createAlertAddNewItemWithTitle:@"Add a new item"
                                                                  addedNewItemBlock:^(NSString * _Nonnull itemName) {
         
