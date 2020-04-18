@@ -52,6 +52,12 @@
     [self.realmWrapper removeItem:item];
 }
 
+- (void)toggleItemCompletion:(Item *)item withCompletionHandler:(void (^)(void))completionHandler {
+    [self.realmWrapper toggleItemCompletion:item withCompletionHandler:^{
+        completionHandler();
+    }];
+}
+
 #pragma mark Private methods
 - (void)processAddedItem:(Item *)item {
     

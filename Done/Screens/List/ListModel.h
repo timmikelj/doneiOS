@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addNewItemWithName: (NSString *)name withCompletionHandler: (void (^)(void))completionHandler;
 - (void)removeItem:(Item *)item;
+- (void)toggleItemCompletion:(Item *)item withCompletionHandler:(void (^)(void))completionHandler;
 
 @end
 

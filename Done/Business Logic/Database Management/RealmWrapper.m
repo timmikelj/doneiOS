@@ -40,4 +40,14 @@
     [self.realm commitWriteTransaction];
 }
 
+- (void)toggleItemCompletion:(Item *)item withCompletionHandler:(void (^)(void))completionHandler {
+    if (!item) {
+        return;
+    }
+    [self.realm beginWriteTransaction];
+    item.completed = !item.completed;
+    [self.realm commitWriteTransaction];
+    completionHandler();
+}
+
 @end

@@ -43,6 +43,13 @@
     [self.model removeItem:itemToDelete];
 }
 
+- (void)toggleItemCompletionAtIndex:(NSUInteger)index withCompletionHandler:(void (^)(void))completionHandler {
+    Item *itemToToggle = [self.items objectAtIndex:index];
+    [self.model toggleItemCompletion:itemToToggle withCompletionHandler:^{
+        completionHandler();
+    }];
+}
+
 - (UILabel *)emptyListLabelForView:(UIView *)view {
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,
                                                                0,

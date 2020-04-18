@@ -54,6 +54,13 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self.viewModel toggleItemCompletionAtIndex:indexPath.row
+                          withCompletionHandler:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                                  withRowAnimation:UITableViewRowAnimationAutomatic];
+        });
+    }];
     [self.tableView deselectRowAtIndexPath:indexPath animated:true];
 }
 
