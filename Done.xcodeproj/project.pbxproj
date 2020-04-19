@@ -319,20 +319,20 @@
 			path = "Haptic Feedback";
 			sourceTree = "<group>";
 		};
-		82C52CF1244B8CA4009F0232 /* Success View Controller */ = {
+		82C52CF1244B8CA4009F0232 /* Success */ = {
 			isa = PBXGroup;
 			children = (
 				82C52CF3244B8CE1009F0232 /* SuccessViewController.h */,
 				82C52CF4244B8CE1009F0232 /* SuccessViewController.m */,
 				82C52CF6244B8CED009F0232 /* Success.storyboard */,
 			);
-			path = "Success View Controller";
+			path = Success;
 			sourceTree = "<group>";
 		};
 		82C52CF2244B8CBA009F0232 /* Common Screens */ = {
 			isa = PBXGroup;
 			children = (
-				82C52CF1244B8CA4009F0232 /* Success View Controller */,
+				82C52CF1244B8CA4009F0232 /* Success */,
 			);
 			path = "Common Screens";
 			sourceTree = "<group>";
