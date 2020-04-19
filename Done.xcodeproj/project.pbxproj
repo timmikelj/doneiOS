@@ -26,6 +26,8 @@
 		82B4B5CF24479E8C0056BD3B /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5CE24479E8C0056BD3B /* Item.m */; };
 		82B4B5D224479EB20056BD3B /* ImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5D124479EB20056BD3B /* ImageDownloader.m */; };
 		82C52CF0244B8962009F0232 /* HapticFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C52CEF244B8962009F0232 /* HapticFeedback.m */; };
+		82C52CF5244B8CE1009F0232 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C52CF4244B8CE1009F0232 /* SuccessViewController.m */; };
+		82C52CF7244B8CED009F0232 /* Success.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82C52CF6244B8CED009F0232 /* Success.storyboard */; };
 		F2C7ABCF1B799F5AE000CEAD /* Pods_DoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E749DC500903065225AF9EFE /* Pods_DoneTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,9 @@
 		82B4B5D124479EB20056BD3B /* ImageDownloader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageDownloader.m; sourceTree = "<group>"; };
 		82C52CEE244B8962009F0232 /* HapticFeedback.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HapticFeedback.h; sourceTree = "<group>"; };
 		82C52CEF244B8962009F0232 /* HapticFeedback.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HapticFeedback.m; sourceTree = "<group>"; };
+		82C52CF3244B8CE1009F0232 /* SuccessViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
+		82C52CF4244B8CE1009F0232 /* SuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
+		82C52CF6244B8CED009F0232 /* Success.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Success.storyboard; sourceTree = "<group>"; };
 		82D517F22447917300F450D7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B54722479A057787ED0C8FF7 /* Pods-Done.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done.release.xcconfig"; path = "Target Support Files/Pods-Done/Pods-Done.release.xcconfig"; sourceTree = "<group>"; };
 		B7ED410BC547135A83C01124 /* Pods_Done.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Done.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +232,7 @@
 		824F76772446F1F9009DA299 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				82C52CF2244B8CBA009F0232 /* Common Screens */,
 				824F76782446F203009DA299 /* List */,
 			);
 			path = Screens;
@@ -301,6 +307,24 @@
 				82C52CEF244B8962009F0232 /* HapticFeedback.m */,
 			);
 			path = "Haptic Feedback";
+			sourceTree = "<group>";
+		};
+		82C52CF1244B8CA4009F0232 /* Success View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				82C52CF3244B8CE1009F0232 /* SuccessViewController.h */,
+				82C52CF4244B8CE1009F0232 /* SuccessViewController.m */,
+				82C52CF6244B8CED009F0232 /* Success.storyboard */,
+			);
+			path = "Success View Controller";
+			sourceTree = "<group>";
+		};
+		82C52CF2244B8CBA009F0232 /* Common Screens */ = {
+			isa = PBXGroup;
+			children = (
+				82C52CF1244B8CA4009F0232 /* Success View Controller */,
+			);
+			path = "Common Screens";
 			sourceTree = "<group>";
 		};
 		8512F8DBA3FC3AE006A2C649 /* Frameworks */ = {
@@ -397,6 +421,7 @@
 			files = (
 				824F76602446F1ED009DA299 /* LaunchScreen.storyboard in Resources */,
 				824F767E2446F252009DA299 /* ListTableViewCell.xib in Resources */,
+				82C52CF7244B8CED009F0232 /* Success.storyboard in Resources */,
 				824F765D2446F1ED009DA299 /* Assets.xcassets in Resources */,
 				824F765B2446F1EC009DA299 /* List.storyboard in Resources */,
 			);
@@ -480,6 +505,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C52CF5244B8CE1009F0232 /* SuccessViewController.m in Sources */,
 				82C52CF0244B8962009F0232 /* HapticFeedback.m in Sources */,
 				82B4B5CF24479E8C0056BD3B /* Item.m in Sources */,
 				82B4B5D224479EB20056BD3B /* ImageDownloader.m in Sources */,

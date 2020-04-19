@@ -45,8 +45,10 @@
 
 - (void)toggleItemCompletionAtIndex:(NSUInteger)index withCompletionHandler:(void (^)(void))completionHandler {
     Item *itemToToggle = [self.items objectAtIndex:index];
+    __weak typeof(self) weakSelf = self;
     [self.model toggleItemCompletion:itemToToggle withCompletionHandler:^{
         completionHandler();
+        [weakSelf checkItemsCompletionStatus];
     }];
 }
 
@@ -63,6 +65,17 @@
     [label sizeToFit];
     
     return label;
+}
+
+#pragma mark Private Methods
+- (void)checkItemsCompletionStatus {
+    if (self.items.count > 0) {
+        NSUInteger completedItemsCount = [[Item objectsWhere:@"completed == true"] count];
+        if (self.items.count == completedItemsCount) {
+            NSString *successMessage = @"Awesome you are all Done!";
+            [self.viewControllerDelegate allItemsCompletedWithSuccessMessage:successMessage];
+        }
+    }
 }
 
 #pragma mark ListViewModelDelegate Methods

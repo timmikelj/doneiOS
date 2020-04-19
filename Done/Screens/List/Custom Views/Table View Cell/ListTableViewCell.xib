@@ -29,10 +29,10 @@
                         </subviews>
                     </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NZc-6Y-1x5">
-                        <rect key="frame" x="74" y="12" width="176" height="46"/>
+                        <rect key="frame" x="74" y="12" width="178" height="46"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H1I-8b-Yvi">
-                                <rect key="frame" x="0.0" y="0.0" width="176" height="31"/>
+                                <rect key="frame" x="0.0" y="0.0" width="178" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="aUw-zr-dgg"/>
                                 </constraints>
@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhO-Z9-jxM">
-                                <rect key="frame" x="0.0" y="31" width="176" height="15"/>
+                                <rect key="frame" x="0.0" y="31" width="178" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="VIb-vP-aCO"/>
                                 </constraints>
@@ -51,35 +51,35 @@
                             </label>
                         </subviews>
                     </stackView>
-                    <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="nib must contain exactly one top level object which must be a UITableViewCell instance&quot;" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9i-bA-Wdd">
-                        <rect key="frame" x="258" y="19" width="32" height="32"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mao-5b-FD2">
+                        <rect key="frame" x="268" y="19" width="32" height="32"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="32" id="KWS-XZ-Qrw"/>
-                            <constraint firstAttribute="width" constant="32" id="PeX-zc-SC4"/>
+                            <constraint firstAttribute="width" constant="32" id="Hed-Yo-i32"/>
+                            <constraint firstAttribute="height" constant="32" id="xlt-GR-mUn"/>
                         </constraints>
-                    </button>
+                    </imageView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="NZc-6Y-1x5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" priority="750" constant="16" id="4G5-Ut-C6V"/>
-                    <constraint firstItem="c9i-bA-Wdd" firstAttribute="leading" secondItem="NZc-6Y-1x5" secondAttribute="trailing" constant="8" id="K5R-6g-NJd"/>
-                    <constraint firstAttribute="trailing" secondItem="c9i-bA-Wdd" secondAttribute="trailing" constant="30" id="ShY-Ik-hIy"/>
+                    <constraint firstItem="mao-5b-FD2" firstAttribute="centerY" secondItem="NZc-6Y-1x5" secondAttribute="centerY" id="RYy-CO-aXh"/>
+                    <constraint firstItem="mao-5b-FD2" firstAttribute="leading" secondItem="NZc-6Y-1x5" secondAttribute="trailing" constant="16" id="TCT-F9-eFE"/>
                     <constraint firstItem="NZc-6Y-1x5" firstAttribute="leading" secondItem="0Ka-wV-5TV" secondAttribute="trailing" constant="8" id="VBk-RW-Ln1"/>
                     <constraint firstItem="0Ka-wV-5TV" firstAttribute="centerY" secondItem="NZc-6Y-1x5" secondAttribute="centerY" id="XJs-gN-QQA"/>
                     <constraint firstItem="0Ka-wV-5TV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="YDh-NO-sLK"/>
                     <constraint firstAttribute="bottom" secondItem="NZc-6Y-1x5" secondAttribute="bottom" constant="12" id="aqT-C1-G7L"/>
-                    <constraint firstItem="c9i-bA-Wdd" firstAttribute="centerY" secondItem="NZc-6Y-1x5" secondAttribute="centerY" id="ikC-nQ-neC"/>
+                    <constraint firstAttribute="trailing" secondItem="mao-5b-FD2" secondAttribute="trailing" constant="20" id="hmG-Mb-gRG"/>
                     <constraint firstItem="NZc-6Y-1x5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="rec-gl-ard"/>
                     <constraint firstItem="NZc-6Y-1x5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="tvp-Zs-FXv"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
-                <outlet property="checkBoxButton" destination="c9i-bA-Wdd" id="mrb-dQ-9lJ"/>
+                <outlet property="checkBoxImageView" destination="mao-5b-FD2" id="VFs-Km-cXU"/>
                 <outlet property="itemAddedTimeAgoLabel" destination="MhO-Z9-jxM" id="PxE-vb-lO7"/>
                 <outlet property="itemImageView" destination="qI0-QQ-8fv" id="5bA-VA-0Qv"/>
                 <outlet property="itemNameLabel" destination="H1I-8b-Yvi" id="usm-5Q-kyu"/>
             </connections>
-            <point key="canvasLocation" x="-171" y="115"/>
+            <point key="canvasLocation" x="-171.01449275362319" y="114.50892857142857"/>
         </tableViewCell>
     </objects>
 </document>

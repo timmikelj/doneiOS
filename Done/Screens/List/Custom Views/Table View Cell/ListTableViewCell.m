@@ -13,7 +13,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *itemAddedTimeAgoLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *itemImageView;
-@property (strong, nonatomic) IBOutlet UIButton *checkBoxButton;
+@property (strong, nonatomic) IBOutlet UIImageView *checkBoxImageView;
 
 @property (strong, atomic) Item *item;
 
@@ -32,8 +32,8 @@
 - (void)configureWithItem:(Item *)item {
     self.item = item;
     self.itemNameLabel.text = item.name;
-    [self.checkBoxButton setBackgroundImage:[self getImageForItemCompletedStatus:item.completed] forState:normal];
-    [self.checkBoxButton setTintColor:[UIColor labelColor]];
+    [self.checkBoxImageView setImage:[self getImageForItemCompletedStatus:item.completed]];
+    [self.checkBoxImageView setTintColor:[UIColor labelColor]];
     
     UIImage *itemImage = [UIImage imageWithData:item.imageData];
     if (itemImage != nil) {
@@ -49,10 +49,6 @@
     return completed == YES
     ? [UIImage imageNamed:@"done"]
     : [UIImage imageNamed:@"notDone"];
-}
-
-- (IBAction)checkBoxTapped:(UIButton *)sender {
-    // update completed status in realm & update UI
 }
 
 + (NSString *)reuseIdentifier {

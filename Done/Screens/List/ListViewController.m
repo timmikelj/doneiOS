@@ -10,6 +10,7 @@
 #import "ListViewModel.h"
 #import "AlertHelper.h"
 #import "HapticFeedback.h"
+#import "SuccessViewController.h"
 
 @interface ListViewController ()
 
@@ -113,6 +114,11 @@
         [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:index inSection:0], nil]
                               withRowAnimation:UITableViewRowAnimationAutomatic];
     });
+}
+
+- (void)allItemsCompletedWithSuccessMessage:(NSString *)successMessage {
+    SuccessViewController *successViewController = [[SuccessViewController alloc] initWithSuccessMessage:successMessage];
+    [self presentViewController:successViewController animated:true completion:nil];
 }
 
 @end

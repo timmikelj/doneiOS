@@ -11,5 +11,6 @@
 @protocol ListViewControllerDelegate <NSObject>
 
 - (void)reloadTableViewCellAtIndex:(NSUInteger)index;
+- (void)allItemsCompletedWithSuccessMessage:(NSString *)successMessage;
 
 @end

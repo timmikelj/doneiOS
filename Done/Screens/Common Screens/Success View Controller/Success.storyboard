@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jHr-wc-3YI">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Success View Controller-->
+        <scene sceneID="0Gx-kD-V90">
+            <objects>
+                <viewController storyboardIdentifier="SuccessViewController" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jHr-wc-3YI" customClass="SuccessViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SPL-s7-suT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Success Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VfE-aD-rlN">
+                                <rect key="frame" x="16" y="386.5" width="382" height="33.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6o6-Hb-Ui0">
+                                <rect key="frame" x="87" y="752" width="240" height="50"/>
+                                <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="UHJ-vS-RsL"/>
+                                    <constraint firstAttribute="height" constant="50" id="yJF-Wt-neU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeTapped:" destination="jHr-wc-3YI" eventType="touchUpInside" id="md8-mJ-pbE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="VfE-aD-rlN" firstAttribute="leading" secondItem="wkI-RL-P9n" secondAttribute="leading" constant="16" id="CtF-jZ-yuL"/>
+                            <constraint firstItem="6o6-Hb-Ui0" firstAttribute="centerX" secondItem="SPL-s7-suT" secondAttribute="centerX" id="DkT-et-zuf"/>
+                            <constraint firstItem="wkI-RL-P9n" firstAttribute="bottom" secondItem="6o6-Hb-Ui0" secondAttribute="bottom" constant="60" id="EVO-FW-bvv"/>
+                            <constraint firstItem="VfE-aD-rlN" firstAttribute="centerX" secondItem="SPL-s7-suT" secondAttribute="centerX" id="NZx-BH-Exb"/>
+                            <constraint firstItem="wkI-RL-P9n" firstAttribute="trailing" secondItem="VfE-aD-rlN" secondAttribute="trailing" constant="16" id="aJo-82-EZe"/>
+                            <constraint firstItem="VfE-aD-rlN" firstAttribute="centerY" secondItem="SPL-s7-suT" secondAttribute="centerY" multiplier="0.9" id="c1P-2P-Jgo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wkI-RL-P9n"/>
+                    </view>
+                    <connections>
+                        <outlet property="closeButton" destination="6o6-Hb-Ui0" id="1yF-gk-Z8a"/>
+                        <outlet property="successLabel" destination="VfE-aD-rlN" id="C58-AD-SSF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IXg-7V-o1r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="163.768115942029" y="128.57142857142856"/>
+        </scene>
+    </scenes>
+</document>
