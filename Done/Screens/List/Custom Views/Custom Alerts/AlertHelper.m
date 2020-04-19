@@ -7,14 +7,25 @@
 //
 
 #import "AlertHelper.h"
+#import "HapticFeedback.h"
 
 @interface AlertHelper()
 
 @property UIAlertController *alert;
+@property (strong, nonatomic) HapticFeedback *hapticFeedback;
 
 @end
 
 @implementation AlertHelper
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.hapticFeedback = [HapticFeedback new];
+    }
+    return self;
+}
 
 - (UIAlertController *)createAlertAddNewItemWithTitle:(NSString *)title addedNewItemBlock:(void (^)(NSString *itemName))addNewItem {
     self.alert = [UIAlertController alertControllerWithTitle:title
@@ -46,6 +57,7 @@
                                                       handler:^(UIAlertAction * _Nonnull action) {
         
         NSString *itemText = self.alert.textFields.firstObject.text;
+        [self.hapticFeedback tapped];
         if (![itemText isEqualToString:@""]) {
             addNewItem(itemText);
         } else {
@@ -61,6 +73,7 @@
     return [UIAlertAction actionWithTitle:@"Cancel"
                                     style:UIAlertActionStyleDestructive
                                   handler:^(UIAlertAction * _Nonnull action) {
+        [self.hapticFeedback tapped];
         [self.alert dismissViewControllerAnimated:true completion:nil];
     }];
 }
