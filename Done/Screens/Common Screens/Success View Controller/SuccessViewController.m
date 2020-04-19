@@ -72,17 +72,21 @@
     CAEmitterCell *cell = [CAEmitterCell emitterCell];
     cell.yAcceleration = 50;
     cell.birthRate = 10;
-    cell.lifetime = 3.0;
+    cell.lifetime = 5;
     cell.lifetimeRange = 0;
-    cell.velocity = 150;
-    cell.velocityRange = 70;
+    cell.velocity = 200;
+    cell.velocityRange = 100;
     cell.emissionLongitude = M_PI;
     cell.emissionLatitude = 0;
     cell.emissionRange = M_PI / 4;
     cell.spin = 4;
     cell.spinRange = 10;
     cell.color = [color CGColor];
-//    cell.contentsRect =
+    
+    UIImage *emitterImage = [UIImage imageNamed:@"emitterCell.png"];
+    [emitterImage imageWithTintColor:color];
+    
+    cell.contents = (id)emitterImage;
     return cell;
 }
 
