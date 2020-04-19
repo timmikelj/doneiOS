@@ -7,6 +7,7 @@
 //
 
 #import "SuccessViewController.h"
+#import "UIImage+Extensions.h"
 
 @interface SuccessViewController ()
 
@@ -83,10 +84,9 @@
     cell.spinRange = 10;
     cell.color = [color CGColor];
     
-    UIImage *emitterImage = [UIImage imageNamed:@"emitterCell.png"];
-    [emitterImage imageWithTintColor:color];
+    UIImage *emitterImage = [[UIImage imageNamed:@"emitterCell.png"] tintColor:color];
     
-    cell.contents = (id)emitterImage;
+    cell.contents = (id)[emitterImage CGImage];
     return cell;
 }
 
