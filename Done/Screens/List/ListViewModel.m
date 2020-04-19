@@ -74,7 +74,7 @@
     if (self.items.count > 0) {
         NSUInteger completedItemsCount = [[Item objectsWhere:@"completed == true"] count];
         if (self.items.count == completedItemsCount) {
-            NSString *successMessage = @"Awesome you are all Done!";
+            NSString *successMessage = @"Awesome!\n\nYou are all Done.";
             [self.viewControllerDelegate allItemsCompletedWithSuccessMessage:successMessage];
         }
     }

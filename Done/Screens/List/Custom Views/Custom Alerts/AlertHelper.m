@@ -38,7 +38,7 @@
 - (void)configureAddNewItemWithBlock:(void (^)(NSString *itemName))addNewItem {
     
     [self.alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-        textField.placeholder = @"Please type in here";
+        textField.placeholder = @"Type in here";
     }];
     
     UIAlertAction *addAction = [UIAlertAction actionWithTitle:@"Add"
