@@ -41,19 +41,21 @@
     item.name = name;
     item.timeStamp = [[NSDate alloc] init];
     
-    [self.realmWrapper addItem:item withCompletionHandler:^{
+    [self.realmWrapper addItem:item toRealm:[RLMRealm defaultRealm] withCompletionHandler:^{
         completionHandler();
     }];
     
     [self processAddedItem:item];
 }
 
-- (void)removeItem:(Item *)item {
-    [self.realmWrapper removeItem:item];
+- (void)removeItem:(Item *)item withCompletionHandler:(void (^)(void))completionHandler {
+    [self.realmWrapper removeItem:item fromRealm:[RLMRealm defaultRealm] withCompletionHandler:^{
+        completionHandler();
+    }];
 }
 
 - (void)toggleItemCompletion:(Item *)item withCompletionHandler:(void (^)(void))completionHandler {
-    [self.realmWrapper toggleItemCompletion:item withCompletionHandler:^{
+    [self.realmWrapper toggleItemCompletion:item inRealm:[RLMRealm defaultRealm] withCompletionHandler:^{
         completionHandler();
     }];
 }

@@ -22,6 +22,7 @@
 		824F767D2446F252009DA299 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F767B2446F252009DA299 /* ListTableViewCell.m */; };
 		824F767E2446F252009DA299 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824F767C2446F252009DA299 /* ListTableViewCell.xib */; };
 		82958B032448CFFB003D151B /* AlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 82958B022448CFFB003D151B /* AlertHelper.m */; };
+		82B11808244C99A700124787 /* RealmWrapperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B11807244C99A700124787 /* RealmWrapperTests.m */; };
 		82B4B5C424479A550056BD3B /* ListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5C324479A550056BD3B /* ListViewModel.m */; };
 		82B4B5C724479DBA0056BD3B /* RealmWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5C624479DBA0056BD3B /* RealmWrapper.m */; };
 		82B4B5CB24479DF30056BD3B /* LanguageProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B4B5CA24479DF30056BD3B /* LanguageProcessor.m */; };
@@ -74,6 +75,7 @@
 		82661237244A3789005FA53A /* ListViewModelDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewModelDelegate.h; sourceTree = "<group>"; };
 		82958B012448CFFB003D151B /* AlertHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertHelper.h; sourceTree = "<group>"; };
 		82958B022448CFFB003D151B /* AlertHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertHelper.m; sourceTree = "<group>"; };
+		82B11807244C99A700124787 /* RealmWrapperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmWrapperTests.m; sourceTree = "<group>"; };
 		82B4B5C324479A550056BD3B /* ListViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewModel.m; sourceTree = "<group>"; };
 		82B4B5C524479DBA0056BD3B /* RealmWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmWrapper.h; sourceTree = "<group>"; };
 		82B4B5C624479DBA0056BD3B /* RealmWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmWrapper.m; sourceTree = "<group>"; };
@@ -301,6 +303,14 @@
 			path = "Custom Alerts";
 			sourceTree = "<group>";
 		};
+		82B11806244C998500124787 /* Database Management */ = {
+			isa = PBXGroup;
+			children = (
+				82B11807244C99A700124787 /* RealmWrapperTests.m */,
+			);
+			path = "Database Management";
+			sourceTree = "<group>";
+		};
 		82B4B5C824479DC90056BD3B /* Language Processing */ = {
 			isa = PBXGroup;
 			children = (
@@ -340,6 +350,7 @@
 		82F10C81244C77AD000007E9 /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
+				82B11806244C998500124787 /* Database Management */,
 				82F10C82244C77B8000007E9 /* Language Processing */,
 			);
 			path = "Business Logic";
@@ -555,6 +566,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				824F766D2446F1ED009DA299 /* LanguageProcessorTests.m in Sources */,
+				82B11808244C99A700124787 /* RealmWrapperTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

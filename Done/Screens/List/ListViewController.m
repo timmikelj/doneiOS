@@ -81,11 +81,14 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.hapticFeedback tapped];
-        [self.viewModel removeItemAtIndex:indexPath.row];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                                  withRowAnimation:UITableViewRowAnimationLeft];
-        });
+        
+        __weak typeof(self) weakSelf = self;
+        [self.viewModel removeItemAtIndex:indexPath.row withCompletionHandler:^{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
+                                      withRowAnimation:UITableViewRowAnimationLeft];
+            });
+        }];
     }
 }
 

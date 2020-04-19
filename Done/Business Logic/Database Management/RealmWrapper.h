@@ -13,9 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RealmWrapper : NSObject
 
-- (void)addItem:(Item *)item withCompletionHandler:(void (^)(void))completionHandler;
-- (void)removeItem:(Item *)item;
-- (void)toggleItemCompletion:(Item *)item withCompletionHandler:(void (^)(void))completionHandler;
+- (void)addItem:(Item *)item toRealm:(RLMRealm *)realm withCompletionHandler:(void (^)(void))completionHandler;
+- (void)removeItem:(Item *)item fromRealm:(RLMRealm *)realm withCompletionHandler:(void (^)(void))completionHandler;
+- (void)toggleItemCompletion:(Item *)item inRealm:(RLMRealm *)realm withCompletionHandler:(void (^)(void))completionHandler;
 
 @end
 

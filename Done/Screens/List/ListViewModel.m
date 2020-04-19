@@ -38,9 +38,11 @@
     }];
 }
 
-- (void)removeItemAtIndex:(NSUInteger)index {
+- (void)removeItemAtIndex:(NSUInteger)index withCompletionHandler:(void (^)(void))completionHandler {
     Item *itemToDelete = [self.items objectAtIndex:index];
-    [self.model removeItem:itemToDelete];
+    [self.model removeItem:itemToDelete withCompletionHandler:^{
+        completionHandler();
+    }];
 }
 
 - (void)toggleItemCompletionAtIndex:(NSUInteger)index withCompletionHandler:(void (^)(void))completionHandler {

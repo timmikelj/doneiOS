@@ -8,45 +8,32 @@
 
 #import "RealmWrapper.h"
 
-@interface RealmWrapper ()
-
-@property RLMRealm *realm;
-
-@end
-
 @implementation RealmWrapper
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        self.realm = [RLMRealm defaultRealm];
-    }
-    return self;
-}
-
-- (void)addItem:(Item *)item withCompletionHandler:(void (^)(void))completionHandler {
-    [self.realm transactionWithBlock:^{
-        [self.realm addObject:item];
+- (void)addItem:(Item *)item toRealm:(RLMRealm *)realm withCompletionHandler:(void (^)(void))completionHandler {
+    [realm transactionWithBlock:^{
+        [realm addObject:item];
         completionHandler();
     }];
 }
 
-- (void)removeItem:(Item *)item {
+- (void)removeItem:(Item *)item fromRealm:(RLMRealm *)realm withCompletionHandler:(void (^)(void))completionHandler {
     if (!item) {
         return;
     }
-    [self.realm beginWriteTransaction];
-    [self.realm deleteObject:item];
-    [self.realm commitWriteTransaction];
+    [realm beginWriteTransaction];
+    [realm deleteObject:item];
+    [realm commitWriteTransaction];
+    completionHandler();
 }
 
-- (void)toggleItemCompletion:(Item *)item withCompletionHandler:(void (^)(void))completionHandler {
+- (void)toggleItemCompletion:(Item *)item inRealm:(RLMRealm *)realm withCompletionHandler:(void (^)(void))completionHandler {
     if (!item) {
         return;
     }
-    [self.realm beginWriteTransaction];
+    [realm beginWriteTransaction];
     item.completed = !item.completed;
-    [self.realm commitWriteTransaction];
+    [realm commitWriteTransaction];
     completionHandler();
 }
 

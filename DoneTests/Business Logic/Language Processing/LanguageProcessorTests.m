@@ -18,7 +18,7 @@
 @implementation LanguageProcessorTests
 
 - (void)setUp {
-    self.sut = [[LanguageProcessor alloc] init];
+    self.sut = [LanguageProcessor new];
 }
 
 - (void)testEvaluateStringFindsANoun {
