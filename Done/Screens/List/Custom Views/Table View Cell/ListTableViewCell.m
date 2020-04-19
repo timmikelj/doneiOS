@@ -8,6 +8,7 @@
 
 #import "ListTableViewCell.h"
 #import "NSDate+Extensions.h"
+#import "UIColor+Extensions.h"
 
 @interface ListTableViewCell()
 
@@ -35,7 +36,7 @@
     self.itemNameLabel.text = item.name;
     self.itemAddedTimeAgoLabel.text = [NSString stringWithFormat:@"Added %@", [item.timeStamp timeAgo]];
     [self.checkBoxImageView setImage:[self getImageForItemCompletedStatus:item.completed]];
-    [self.checkBoxImageView setTintColor:[UIColor labelColor]];
+    [self.checkBoxImageView setTintColor:[UIColor labelColorBackwardsCompatible]];
     
     UIImage *itemImage = [UIImage imageWithData:item.imageData];
     if (itemImage != nil) {

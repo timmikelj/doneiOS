@@ -8,6 +8,7 @@
 
 #import "ListViewModel.h"
 #import "ListModel.h"
+#import "UIColor+Extensions.h"
 
 @interface ListViewModel()
 
@@ -60,7 +61,7 @@
                                                                view.bounds.size.width - 32,
                                                                view.bounds.size.height)];
     label.text = @"Get things done. 💪\n\nAdd a new item by tapping +";
-    label.textColor = [UIColor labelColor];
+    label.textColor = [UIColor labelColorBackwardsCompatible];
     label.numberOfLines = 0;
     label.textAlignment = NSTextAlignmentCenter;
     label.font = [UIFont preferredFontForTextStyle:@"UIFontTextStyleTitle1"];

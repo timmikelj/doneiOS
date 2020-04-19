@@ -51,6 +51,7 @@
 #pragma mark Private methods
 
 - (void)makeHappiness {
+    
     self.particleEmitter.emitterPosition = CGPointMake(self.view.center.x, -50);
     self.particleEmitter.emitterSize = CGSizeMake(self.view.frame.size.width, 10);
     self.particleEmitter.emitterShape = kCAEmitterLayerLine;
@@ -65,7 +66,6 @@
     [self.view.layer setNeedsDisplay];
     
     self.particleEmitter.beginTime = CACurrentMediaTime();
-    
 }
 
 - (CAEmitterCell *)makeEmitterCellWithColor:(UIColor *)color {
