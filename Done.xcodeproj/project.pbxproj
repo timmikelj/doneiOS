@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0CF4F1F8EBFB528ED9D308F7 /* Pods_Done.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7ED410BC547135A83C01124 /* Pods_Done.framework */; };
 		820E3E4F24478FBB00E7279D /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 820E3E4E24478FBB00E7279D /* ListModel.m */; };
+		8235A1A2244C3EF6001B4B79 /* NSDate+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8235A1A1244C3EF6001B4B79 /* NSDate+Extensions.m */; };
+		8235A1A5244C42C0001B4B79 /* UIImage+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8235A1A4244C42C0001B4B79 /* UIImage+Extensions.m */; };
 		824F76522446F1EC009DA299 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F76512446F1EC009DA299 /* AppDelegate.m */; };
 		824F76552446F1EC009DA299 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F76542446F1EC009DA299 /* SceneDelegate.m */; };
 		824F76582446F1EC009DA299 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F76572446F1EC009DA299 /* ListViewController.m */; };
@@ -47,6 +49,10 @@
 		820E3E4D24478FBB00E7279D /* ListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
 		820E3E4E24478FBB00E7279D /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		820E3E5024478FCB00E7279D /* ListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewModel.h; sourceTree = "<group>"; };
+		8235A1A0244C3EF6001B4B79 /* NSDate+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extensions.h"; sourceTree = "<group>"; };
+		8235A1A1244C3EF6001B4B79 /* NSDate+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extensions.m"; sourceTree = "<group>"; };
+		8235A1A3244C42C0001B4B79 /* UIImage+Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extensions.h"; sourceTree = "<group>"; };
+		8235A1A4244C42C0001B4B79 /* UIImage+Extensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extensions.m"; sourceTree = "<group>"; };
 		824F764D2446F1EB009DA299 /* Done..app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Done..app; sourceTree = BUILT_PRODUCTS_DIR; };
 		824F76502446F1EB009DA299 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		824F76512446F1EC009DA299 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -185,6 +191,10 @@
 		821E648A24489A0000B6AA90 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8235A1A0244C3EF6001B4B79 /* NSDate+Extensions.h */,
+				8235A1A1244C3EF6001B4B79 /* NSDate+Extensions.m */,
+				8235A1A3244C42C0001B4B79 /* UIImage+Extensions.h */,
+				8235A1A4244C42C0001B4B79 /* UIImage+Extensions.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -514,7 +524,9 @@
 				82958B032448CFFB003D151B /* AlertHelper.m in Sources */,
 				824F76632446F1ED009DA299 /* main.m in Sources */,
 				82B4B5C724479DBA0056BD3B /* RealmWrapper.m in Sources */,
+				8235A1A2244C3EF6001B4B79 /* NSDate+Extensions.m in Sources */,
 				82B4B5C424479A550056BD3B /* ListViewModel.m in Sources */,
+				8235A1A5244C42C0001B4B79 /* UIImage+Extensions.m in Sources */,
 				82B4B5CB24479DF30056BD3B /* LanguageProcessor.m in Sources */,
 				820E3E4F24478FBB00E7279D /* ListModel.m in Sources */,
 				824F76552446F1EC009DA299 /* SceneDelegate.m in Sources */,

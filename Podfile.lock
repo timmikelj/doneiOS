@@ -1,7 +1,7 @@
 PODS:
-  - Realm (4.4.0):
-    - Realm/Headers (= 4.4.0)
-  - Realm/Headers (4.4.0)
+  - Realm (4.4.1):
+    - Realm/Headers (= 4.4.1)
+  - Realm/Headers (4.4.1)
 
 DEPENDENCIES:
   - Realm
@@ -12,7 +12,7 @@ SPEC REPOS:
     - Realm
 
 SPEC CHECKSUMS:
-  Realm: e125f464884cda953ebefe70c671b75b03b81b9b
+  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
 
 PODFILE CHECKSUM: 0cb2572cfbedf4849b87a487af616b9c08291700
 
