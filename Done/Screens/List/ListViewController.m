@@ -21,9 +21,14 @@
 
 @implementation ListViewController
 
+#pragma mark - View Lifecycle
 - (void)viewDidLoad {
     [self setup];
     [super viewDidLoad];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [self.tableView reloadData];
 }
 
 - (void)setup {
