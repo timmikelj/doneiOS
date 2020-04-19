@@ -26,7 +26,8 @@
 }
 
 - (void)findNounsAndVerbsInAString:(NSString *)string
-               withCompletionHandler:(nonnull void (^)(NSArray * _Nullable, NSArray * _Nullable))completionHandler {
+               withCompletionHandler:(nonnull void (^)(NSArray * _Nullable nouns,
+                                                       NSArray * _Nullable verbs))completionHandler {
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
         

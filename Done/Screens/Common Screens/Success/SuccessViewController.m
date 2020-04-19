@@ -38,6 +38,9 @@
     [super viewDidLoad];
     self.closeButton.layer.cornerRadius = self.closeButton.frame.size.height/2;
     self.successLabel.text = self.successMessage;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
     [self makeHappiness];
 }
 

@@ -18,7 +18,7 @@
 		824F765D2446F1ED009DA299 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 824F765C2446F1ED009DA299 /* Assets.xcassets */; };
 		824F76602446F1ED009DA299 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 824F765E2446F1ED009DA299 /* LaunchScreen.storyboard */; };
 		824F76632446F1ED009DA299 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F76622446F1ED009DA299 /* main.m */; };
-		824F766D2446F1ED009DA299 /* DoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F766C2446F1ED009DA299 /* DoneTests.m */; };
+		824F766D2446F1ED009DA299 /* LanguageProcessorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F766C2446F1ED009DA299 /* LanguageProcessorTests.m */; };
 		824F767D2446F252009DA299 /* ListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 824F767B2446F252009DA299 /* ListTableViewCell.m */; };
 		824F767E2446F252009DA299 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 824F767C2446F252009DA299 /* ListTableViewCell.xib */; };
 		82958B032448CFFB003D151B /* AlertHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 82958B022448CFFB003D151B /* AlertHelper.m */; };
@@ -65,7 +65,7 @@
 		824F765F2446F1ED009DA299 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		824F76622446F1ED009DA299 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		824F76682446F1ED009DA299 /* DoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		824F766C2446F1ED009DA299 /* DoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoneTests.m; sourceTree = "<group>"; };
+		824F766C2446F1ED009DA299 /* LanguageProcessorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LanguageProcessorTests.m; sourceTree = "<group>"; };
 		824F766E2446F1ED009DA299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		824F767A2446F252009DA299 /* ListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListTableViewCell.h; sourceTree = "<group>"; };
 		824F767B2446F252009DA299 /* ListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListTableViewCell.m; sourceTree = "<group>"; };
@@ -233,8 +233,8 @@
 		824F766B2446F1ED009DA299 /* DoneTests */ = {
 			isa = PBXGroup;
 			children = (
-				824F766C2446F1ED009DA299 /* DoneTests.m */,
 				824F766E2446F1ED009DA299 /* Info.plist */,
+				82F10C81244C77AD000007E9 /* Business Logic */,
 			);
 			path = DoneTests;
 			sourceTree = "<group>";
@@ -335,6 +335,22 @@
 				82C52CF1244B8CA4009F0232 /* Success */,
 			);
 			path = "Common Screens";
+			sourceTree = "<group>";
+		};
+		82F10C81244C77AD000007E9 /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				82F10C82244C77B8000007E9 /* Language Processing */,
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		82F10C82244C77B8000007E9 /* Language Processing */ = {
+			isa = PBXGroup;
+			children = (
+				824F766C2446F1ED009DA299 /* LanguageProcessorTests.m */,
+			);
+			path = "Language Processing";
 			sourceTree = "<group>";
 		};
 		8512F8DBA3FC3AE006A2C649 /* Frameworks */ = {
@@ -538,7 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				824F766D2446F1ED009DA299 /* DoneTests.m in Sources */,
+				824F766D2446F1ED009DA299 /* LanguageProcessorTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,7 +755,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timmikelj.DoneTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Done.app/Done";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Do, Done..app/Do, Done.";
 			};
 			name = Debug;
 		};
@@ -760,7 +776,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.timmikelj.DoneTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Done.app/Done";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Do, Done..app/Do, Done.";
 			};
 			name = Release;
 		};

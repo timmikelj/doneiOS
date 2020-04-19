@@ -13,9 +13,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LanguageProcessor : NSObject
 
-/// Evalues a string and returns an array of NSString verbs and array of NSString nouns
+/// Evaluates a string and returns an array of NSString verbs and array of NSString nouns
 - (void)findNounsAndVerbsInAString:(NSString *)string
-             withCompletionHandler:(nonnull void (^)(NSArray * _Nullable, NSArray * _Nullable))completionHandler;
+             withCompletionHandler:(nonnull void (^)(NSArray * _Nullable nouns,
+                                                     NSArray * _Nullable verbs))completionHandler;
 
 @end
 
