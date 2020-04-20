@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SuccessViewController : UIViewController
 
+- (instancetype)init __attribute__ ((unavailable("init unavailable. Please use initWithSuccessMessage")));
+
 - (instancetype)initWithSuccessMessage:(NSString *)successMessage;
 
 @end

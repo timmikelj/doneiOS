@@ -292,7 +292,6 @@
 		82958AFF2448CFB1003D151B /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				82958B002448CFCD003D151B /* Custom Alerts */,
 				824F76792446F21D009DA299 /* Table View Cell */,
 				82661235244A3701005FA53A /* Delegates */,
 			);
@@ -347,6 +346,7 @@
 		82C52CF2244B8CBA009F0232 /* Common Screens */ = {
 			isa = PBXGroup;
 			children = (
+				82958B002448CFCD003D151B /* Custom Alerts */,
 				82C52CF1244B8CA4009F0232 /* Success */,
 			);
 			path = "Common Screens";

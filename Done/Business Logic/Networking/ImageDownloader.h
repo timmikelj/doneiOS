@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ImageDownloader : NSObject
 
-/// Using Pixabay API finds finds and downloads first image matching given string
+/// Using search string Pixabay API finds and downloads a list of up to 10 image URLs(depending on how many images are available) and selects random image out of those 10 to download
 - (void)loadFirstImageMatchingString:(NSString *)string
                withCompletionHandler:(void (^)(UIImage * _Nullable image))completionHandler
                     withErrorHandler: (void (^)(NSString *errorMessage))errorHandler;
