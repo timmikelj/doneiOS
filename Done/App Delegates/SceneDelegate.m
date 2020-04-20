@@ -7,6 +7,7 @@
 //
 
 #import "SceneDelegate.h"
+#import "AppConstants.h"
 
 @interface SceneDelegate ()
 
@@ -32,6 +33,7 @@
 
 
 - (void)sceneWillEnterForeground:(UIScene *)scene  API_AVAILABLE(ios(13.0)){
+    [[NSNotificationCenter defaultCenter] postNotificationName:AppEnteredForegroundNotification object:nil];
 }
 
 
