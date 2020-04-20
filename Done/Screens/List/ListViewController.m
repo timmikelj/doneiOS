@@ -11,6 +11,7 @@
 #import "AlertHelper.h"
 #import "HapticFeedback.h"
 #import "SuccessViewController.h"
+#import "AppConstants.h"
 
 @interface ListViewController ()
 
@@ -27,18 +28,27 @@
     [super viewDidLoad];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [self.tableView reloadData];
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)setup {
     self.hapticFeedback = [HapticFeedback new];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(appEnteredForeground)
+                                                 name:AppEnteredForegroundNotification
+                                               object:nil];
+    
     self.viewModel = [ListViewModel new];
     self.viewModel.viewControllerDelegate = self;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableFooterView = [UIView new];
     [self.tableView registerNib:[UINib nibWithNibName:@"ListTableViewCell" bundle:nil]
          forCellReuseIdentifier:[ListTableViewCell reuseIdentifier]];
+}
+
+- (void)appEnteredForeground {
+    [self.tableView reloadData];
 }
 
 #pragma mark - Table View

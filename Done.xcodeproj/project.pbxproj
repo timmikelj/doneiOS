@@ -32,6 +32,7 @@
 		82C52CF0244B8962009F0232 /* HapticFeedback.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C52CEF244B8962009F0232 /* HapticFeedback.m */; };
 		82C52CF5244B8CE1009F0232 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 82C52CF4244B8CE1009F0232 /* SuccessViewController.m */; };
 		82C52CF7244B8CED009F0232 /* Success.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82C52CF6244B8CED009F0232 /* Success.storyboard */; };
+		82E318BE244D8D080099ED01 /* AppConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 82E318BD244D8D080099ED01 /* AppConstants.m */; };
 		F2C7ABCF1B799F5AE000CEAD /* Pods_DoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E749DC500903065225AF9EFE /* Pods_DoneTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,8 @@
 		82C52CF4244B8CE1009F0232 /* SuccessViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
 		82C52CF6244B8CED009F0232 /* Success.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Success.storyboard; sourceTree = "<group>"; };
 		82D517F22447917300F450D7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82E318BC244D8D080099ED01 /* AppConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
+		82E318BD244D8D080099ED01 /* AppConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppConstants.m; sourceTree = "<group>"; };
 		B54722479A057787ED0C8FF7 /* Pods-Done.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Done.release.xcconfig"; path = "Target Support Files/Pods-Done/Pods-Done.release.xcconfig"; sourceTree = "<group>"; };
 		B7ED410BC547135A83C01124 /* Pods_Done.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Done.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E749DC500903065225AF9EFE /* Pods_DoneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DoneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +168,7 @@
 		820E3E4A2446FBA700E7279D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				82E318BB244D8CE10099ED01 /* Static Models */,
 				82B4B5CD24479E8C0056BD3B /* Item.h */,
 				82B4B5CE24479E8C0056BD3B /* Item.m */,
 			);
@@ -350,6 +354,15 @@
 				82C52CF1244B8CA4009F0232 /* Success */,
 			);
 			path = "Common Screens";
+			sourceTree = "<group>";
+		};
+		82E318BB244D8CE10099ED01 /* Static Models */ = {
+			isa = PBXGroup;
+			children = (
+				82E318BC244D8D080099ED01 /* AppConstants.h */,
+				82E318BD244D8D080099ED01 /* AppConstants.m */,
+			);
+			path = "Static Models";
 			sourceTree = "<group>";
 		};
 		82F10C81244C77AD000007E9 /* Business Logic */ = {
@@ -562,6 +575,7 @@
 				82B4B5CB24479DF30056BD3B /* LanguageProcessor.m in Sources */,
 				82BA3B66244CC87400FFAE11 /* UIColor+Extensions.m in Sources */,
 				820E3E4F24478FBB00E7279D /* ListModel.m in Sources */,
+				82E318BE244D8D080099ED01 /* AppConstants.m in Sources */,
 				824F76552446F1EC009DA299 /* SceneDelegate.m in Sources */,
 				824F767D2446F252009DA299 /* ListTableViewCell.m in Sources */,
 			);

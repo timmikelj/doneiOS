@@ -17,8 +17,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *itemImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *checkBoxImageView;
 
-@property (strong, atomic) Item *item;
-
 @end
 
 @implementation ListTableViewCell
@@ -32,7 +30,6 @@
 }
 
 - (void)configureWithItem:(Item *)item {
-    self.item = item;
     self.itemNameLabel.text = item.name;
     self.itemAddedTimeAgoLabel.text = [NSString stringWithFormat:@"Added %@", [item.timeStamp timeAgo]];
     [self.checkBoxImageView setImage:[self getImageForItemCompletedStatus:item.completed]];
@@ -57,4 +54,5 @@
 + (NSString *)reuseIdentifier {
     return @"ListTableViewCell";
 }
+
 @end
