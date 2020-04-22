@@ -11,7 +11,7 @@
 #import "Item.h"
 #import "ListViewModelDelegate.h"
 #import "ListViewControllerDelegate.h"
-#import <UIKit/UILabel.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,6 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)toggleItemCompletionAtIndex:(NSUInteger)index withCompletionHandler:(void (^)(void))completionHandler;
 
 - (UILabel *)emptyListLabelForView:(UIView *)view;
+- (UIView *)getViewForPixabayInfoForView:(UIView *)view;
 
 @end
 

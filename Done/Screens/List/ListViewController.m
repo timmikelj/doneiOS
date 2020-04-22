@@ -96,10 +96,22 @@
         [self.viewModel removeItemAtIndex:indexPath.row withCompletionHandler:^{
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]
-                                      withRowAnimation:UITableViewRowAnimationLeft];
+                                          withRowAnimation:UITableViewRowAnimationLeft];
+                if ([weakSelf.viewModel.items count] == 0) {
+                    [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                                      withRowAnimation:UITableViewRowAnimationAutomatic];
+                }
             });
         }];
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 100;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [self.viewModel getViewForPixabayInfoForView:self.view];
 }
 
 #pragma mark - Actions
@@ -113,6 +125,10 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.tableView insertRowsAtIndexPaths:[NSArray arrayWithObjects:[NSIndexPath indexPathForRow:0 inSection:0], nil]
                                           withRowAnimation:UITableViewRowAnimationAutomatic];
+                if ([weakSelf.viewModel.items count] == 1) {
+                    [weakSelf.tableView reloadSections:[NSIndexSet indexSetWithIndex:0]
+                                      withRowAnimation:UITableViewRowAnimationAutomatic];
+                }
             });
         }];
     }];
